@@ -1,6 +1,13 @@
 const $ = v => document.getElementById(v)
+const ce = ({ type, id, innerHTML }) => {
+  const el = document.createElement(type)
+  el.id = id
+  el.innerHTML = innerHTML
+  return el
+}
 
 const loan = {
+  mainEl: $('main'),
   notificationEl: $('notification'),
   notificationText: $('notification-message'),
   loanAmountEl: $('loan-amount'),
@@ -36,13 +43,10 @@ const loan = {
     this.resultsEl.classList.remove('active')
   },
   showNotification({ text, time }) {
-    this.notificationText.innerText = text
-    this.notificationEl.classList.add('active')
-    setTimeout(() => this.clearNotification(), time * 1000)
-  },
-  clearNotification() {
-    this.notificationText.innerText = ''
-    this.notificationEl.classList.remove('active')
+    const innerHTML = `<span>${text}</span>`
+    const notification = ce({ type: 'div', id: 'notification', innerHTML })
+    this.mainEl.appendChild(notification)
+    setTimeout(() => notification.remove(), time * 1000)
   },
 }
 
