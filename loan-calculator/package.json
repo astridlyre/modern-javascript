@@ -1,0 +1,15 @@
+{
+  "name": "loan-calculator",
+  "version": "1.0.0",
+  "description": "loan calculator project",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w sass/ -o assets/css/ --recursive",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "astrid",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

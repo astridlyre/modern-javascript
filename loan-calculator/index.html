@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <script src="assets/js/index.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div id="notification">
+        <span id="notification-message">Error</span>
+      </div>
+      <header>
+        <div class="icon-container">
+          <svg
+            viewBox="0 0 64 64"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="icon"
+          >
+            <g>
+              <path d="M5,25h32V5H5V25z M7,7h28v16H7V7z" />
+              <path
+                d="M5,59h32V27H5V59z M7,44h13v13H7V44z M22,57V44h13v13H22z M35,42H22V29h13V42z M20,29v13H7V29H20z"
+              />
+              <rect height="2" width="7" x="25" y="35" />
+              <rect height="2" width="8" x="10" y="50" />
+              <polygon
+                points="29,47 27,47 27,50 24,50 24,52 27,52 27,55 29,55 29,52 32,52 32,50 29,50  "
+              />
+              <polygon
+                points="10.65,39.759 13.5,37.316 16.35,39.759 17.65,38.241 15.036,36 17.65,33.759 16.35,32.241    13.5,34.684 10.65,32.241 9.35,33.759 11.964,36 9.35,38.241  "
+              />
+              <rect height="2" width="2" x="13" y="47" />
+              <rect height="2" width="2" x="13" y="53" />
+              <rect height="2" width="2" x="31" y="19" />
+              <rect height="2" width="2" x="27" y="19" />
+              <rect height="2" width="2" x="23" y="19" />
+              <path
+                d="M41,5V1H1v62h40v-4h22V25v-1V5H41z M55,21v2h-4V7h4v12h2V7h4v16h-4v-2H55z M45,23V7h4v16H45z M43,7   v16h-2V7H43z M39,61H3V3h36v2v20V61z M41,32.098c2.435,1.412,4,4.025,4,6.902v18h-4V32.098z M61,57H47V39   c0-3.982-2.384-7.574-6-9.153V25h20V57z"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1>Loan Calculator</h1>
+      </header>
+      <form action="#" id="loan-calculator">
+        <div class="form-row">
+          <label for="loan-amount" class="small">
+            <span>$</span>
+          </label>
+          <input
+            type="number"
+            id="loan-amount"
+            step=".01"
+            required
+            min="1"
+            placeholder="Loan Amount"
+          />
+        </div>
+        <div class="form-row">
+          <label for="loan-interest" class="small">
+            <span>%</span>
+          </label>
+          <input
+            type="number"
+            id="loan-interest"
+            max="100"
+            min="0.01"
+            step=".01"
+            required
+            placeholder="Interest Rate"
+          />
+        </div>
+        <div class="form-row">
+          <label for="loan-years">
+            <span>Repayment Years</span>
+          </label>
+          <input
+            type="number"
+            id="loan-years"
+            min="1"
+            placeholder="Years to Repay"
+          />
+        </div>
+        <div class="btn-container">
+          <button class="btn" type="submit">Calculate</button>
+        </div>
+      </form>
+      <div id="results" class="results">
+        <h2>Results</h2>
+        <ul>
+          <li class="result-row">
+            <span class="result-desc">Monthy Payment</span>
+            <span id="result-monthly-payment" class="result-span"></span>
+          </li>
+          <li class="result-row">
+            <span class="result-desc">Total Payment</span>
+            <span id="result-total-payment" class="result-span"></span>
+          </li>
+          <li class="result-row">
+            <span class="result-desc">Total Interest</span>
+            <span id="result-total-interest" class="result-span"></span>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
