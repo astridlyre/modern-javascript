@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-family: 'Source Code Pro', monospace; }
+
+body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #292b2b; }
+
+#container {
+  position: relative;
+  max-width: 640px;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 2rem 2rem;
+  border-top: 1.5rem solid #fab542;
+  background: #2e3030;
+  box-shadow: 0 0.2rem 0.6rem 0.2rem rgba(4, 4, 4, 0.1); }
+
+h1 {
+  color: #d7e9ec;
+  font-weight: 900;
+  font-size: 3rem;
+  letter-spacing: 0.1rem; }
+
+header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center; }
+
+#guess {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 2rem 0;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */ }
+  #guess h2 {
+    color: #d7e9ec;
+    font-weight: 600;
+    font-size: 1.2rem; }
+  #guess .form-container {
+    display: flex;
+    margin-top: 1rem; }
+  #guess .btn {
+    padding: 0.25rem 1.5rem;
+    border: none;
+    border-radius: 0.1rem;
+    color: #292b2b;
+    background: #fab542;
+    font-size: 0.9rem;
+    font-weight: 900;
+    transition: all 0.2s ease-out; }
+    #guess .btn:hover {
+      background: #f9a210;
+      cursor: pointer;
+      transition: all 0.2s ease-out; }
+  #guess .guess-input {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.1rem;
+    margin-right: 0.5rem;
+    background-color: #d7e9ec; }
+  #guess input::-webkit-outer-spin-button,
+  #guess input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  #guess input[type='number'] {
+    -moz-appearance: textfield; }
+
+.notification {
+  position: absolute;
+  padding: 1rem;
+  border-radius: 0.1rem;
+  box-shadow: 0 0.2rem 1rem 0.1rem rgba(4, 4, 4, 0.5);
+  left: 2rem;
+  right: 2rem;
+  font-weight: 600;
+  color: #d7e9ec;
+  animation: notify 0.4s ease-out; }
+
+@keyframes notify {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.green {
+  background: #517729; }
+
+.red {
+  background: #c64729; }
