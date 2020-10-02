@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;800&display=swap');
+
+$light: #f3f3f0;
+$accent: #c46645;
+$primary: #863b44;
+$daccent: #50666a;
+$dark: #c89f99;
+$green: #71aa66;
+$red: #f44336;
+
+@mixin easeOut {
+  transition: all 0.15s ease-out;
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  color: darken($dark, 10%);
+  background: $light;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  animation: slideFadeIn 0.5s ease-out;
+  color: $daccent;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 680px;
+  width: 100%;
+  padding: 4rem;
+  box-shadow: 0 10px 20px 5px rgba(darken($light, 5%), 0.5);
+  border-radius: 0.1rem;
+}
+
+.btn {
+  padding: 0.5rem 3rem;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0.1rem;
+  color: $light;
+  box-shadow: 0 5px 10px 2px rgba(darken($light, 5%), 0.5);
+  @include easeOut();
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px 2px rgba(darken($light, 10%), 0.5);
+    @include easeOut();
+  }
+
+  &-primary {
+    background: $primary;
+
+    &:hover {
+      background: darken($primary, 10%);
+    }
+  }
+
+  &-secondary {
+    background: $dark;
+
+    &:hover {
+      background: darken($dark, 10%);
+    }
+  }
+
+  &-cancel {
+    background: white;
+    color: $dark;
+
+    &:hover {
+      background-color: lighten($dark, 28%);
+    }
+  }
+
+  + .btn {
+    margin-left: 1rem;
+  }
+
+  &-remove {
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    border-radius: 0.1rem;
+    color: $red;
+    @include easeOut();
+
+    &:hover {
+      color: darken($red, 20%);
+      @include easeOut();
+      cursor: pointer;
+    }
+  }
+}
+
+#add-book {
+  position: relative;
+
+  .notification {
+    position: absolute;
+    color: $light;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 0.1rem;
+    box-shadow: 0 7px 15px 2px rgba(darken($light, 10%), 0.5);
+    right: 2rem;
+    top: -2rem;
+    padding: 0.5rem 0.75rem;
+    animation: notify 0.2s ease-out;
+
+    &.green {
+      background: $green;
+    }
+
+    &.red {
+      background: $red;
+    }
+  }
+}
+
+.book-form {
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  border: 2px solid rgba($dark, 0.2);
+  border-radius: 0.1rem;
+
+  .form-label {
+    display: flex;
+    flex-flow: column nowrap;
+
+    input {
+      margin-top: 0.1rem;
+      border: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.1rem;
+    }
+  }
+
+  .btn-form-container {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.book-list-table {
+  margin-top: 2rem;
+  border-collapse: collapse;
+  border-radius: 0.1rem;
+  background-color: darken($light, 2%);
+  width: 100%;
+
+  thead {
+    border-bottom: 2px solid $daccent;
+    color: $daccent;
+
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+    }
+  }
+
+  tbody {
+    td {
+      padding: 0.5rem 0.75rem;
+
+      &.btn-remove-container {
+        width: 2rem;
+      }
+    }
+
+    tr:nth-child(even) {
+      background: darken($light, 4%);
+    }
+  }
+}
+
+@keyframes slideFadeIn {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  95% {
+    transform: translateX(2px);
+    opacity: 0.98;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes notify {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -87,11 +87,19 @@ header {
   }
 
   .guess-input {
-    border: none;
+    border: 2px solid $light;
     padding: 0.5rem;
     border-radius: 0.1rem;
     margin-right: 0.5rem;
     background-color: $light;
+
+    &.green {
+      border-color: $green;
+    }
+
+    &.red {
+      border-color: $red;
+    }
   }
 
   /* Chrome, Safari, Edge, Opera */

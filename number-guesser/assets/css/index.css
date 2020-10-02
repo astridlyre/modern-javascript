@@ -63,11 +63,15 @@ header {
       cursor: pointer;
       transition: all 0.2s ease-out; }
   #guess .guess-input {
-    border: none;
+    border: 2px solid #d7e9ec;
     padding: 0.5rem;
     border-radius: 0.1rem;
     margin-right: 0.5rem;
     background-color: #d7e9ec; }
+    #guess .guess-input.green {
+      border-color: #517729; }
+    #guess .guess-input.red {
+      border-color: #c64729; }
   #guess input::-webkit-outer-spin-button,
   #guess input::-webkit-inner-spin-button {
     -webkit-appearance: none;

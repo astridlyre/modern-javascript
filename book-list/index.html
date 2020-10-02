@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My books</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <script src="assets/js/index.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>My books</h1>
+      <section id="add-book">
+        <button id="add-book-btn" type="button" class="btn btn-secondary">
+          Add Book
+        </button>
+        <form action="#" id="book-form" class="book-form">
+          <label for="book-title" class="form-label">
+            <span class="form-label-span">Title</span>
+            <input type="text" id="book-title" placeholder="Title" />
+          </label>
+          <label for="book-author" class="form-label">
+            <span class="form-label-span">Author</span>
+            <input type="text" id="book-author" placeholder="Author" />
+          </label>
+          <label for="book-isbn" class="form-label">
+            <span class="form-label-span">ISBN</span>
+            <input type="text" id="book-isbn" placeholder="ISBN" />
+          </label>
+          <div class="btn-form-container">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-cancel" id="book-form-cancel">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <table class="book-list-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="book-list"></tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -24,11 +24,15 @@
   }
 
   function notify({ text, time, won }) {
+    ui.input.classList.add(`${won ? 'green' : 'red'}`)
     const div = document.createElement('div')
     div.classList.add('notification', `${won ? 'green' : 'red'}`)
     div.innerHTML = `<span>${text}</span>`
     ui.container.appendChild(div)
-    setTimeout(() => (div ? div.remove() : null), time * 1000)
+    setTimeout(() => {
+      ui.input.classList.remove('green', 'red')
+      return div ? div.remove() : null
+    }, time * 1000)
   }
 
   function check() {
@@ -84,6 +88,7 @@
     event.preventDefault()
     if (store.playState === 'pre') {
       ui.getNotifications().forEach(el => el.remove())
+      ui.input.classList.remove('red', 'green')
       ui.btn.innerText = 'Guess'
       store.winningNum = Math.floor(Math.random() * 9) + 1
       store.triesRemaining = 3
@@ -94,6 +99,7 @@
     }
     if (store.playState === 'playing') {
       ui.getNotifications().forEach(el => el.remove())
+      ui.input.classList.remove('red', 'green')
       flowControl()
       return
     }
