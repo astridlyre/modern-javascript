@@ -145,3 +145,11 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0); } }
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 13px; }
+  .container {
+    padding: 0; }
+  .book-form {
+    grid-template-columns: 1fr; } }
